@@ -227,23 +227,9 @@ nav ul {
 }
        
 .title {
-    width: 250px;
+    width: 100%;
 }    
-    
-.title-left {
-    bottom: 50%;
-    transform: rotate(-90deg);
-    transform-origin: left 100%;
-    padding-bottom: 10px;
-} 
 
-.title-right {
-    float: right;
-    bottom: 25%;
-    transform: rotate(90deg);
-    transform-origin: right 100%;
-    padding-bottom: 10px;
-}
     
 .push {
     margin-bottom: 150px;
