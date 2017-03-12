@@ -1,0 +1,284 @@
+html body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    cursor: crosshair;
+}
+
+main {
+    margin: 25px;
+}
+
+main img {
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+#logo {
+    margin: 20px 25px 0px;
+    z-index: 1000;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+}
+
+nav ul {
+    margin: 0;
+    padding-left: 4px;
+    right: 30px;
+    top: 15px;
+    position: fixed;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 10pt;
+    display: inline-block;
+    letter-spacing: 5px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+} 
+    
+nav ul li a:hover {
+    color: grey;
+}
+
+.title {
+    position: absolute;
+    margin-top: -90px; 
+    margin-left: 30px;
+}
+
+.line {
+    margin-left: 25px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    width: 25px;
+    height: 1px;
+    background-color: white;
+    display: inline-block;
+}
+
+h2 {
+    color: white;
+    display: inline-block;
+    font-size: 9pt;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+    
+h3 {
+    color: white;
+    float: right;
+    display: inline-block;
+    font-size: 9pt;
+    letter-spacing: 5px;
+    font-weight: 300;
+} 
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section img {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer ul a {
+    color: black;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    margin: 50px 30px;
+    padding: 0;
+}
+
+footer ul li {
+    font-size: 10pt;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+footer ul li:nth-child(2){
+    float: right;
+}
+
+/* About Pages */
+
+
+
+/* Tablet Styles */
+
+@media only screen and (min-width: 40em){
+   
+    
+main {
+    margin: 25px;
+    padding: 0;
+}
+    
+main img {
+    padding: 0;
+    margin: 0;
+}
+    
+a:hover {
+    transition: opacity .3s ease-in-out;
+    opacity: .75;
+}    
+  
+nav {
+    position: relative;
+    height: 75px;
+}    
+    
+nav ul {
+    color: #4F4F4F;
+    top: 35px;
+}
+    
+#logo {
+    position: fixed;
+    z-index: 1000;
+    margin: 40px 0px 0px 40px;
+}
+    
+.rise {
+    margin-top: -200px;
+}
+    
+.push {
+    margin-bottom: 80px;
+}
+   
+.title {
+    position: relative;
+    margin: 0;
+} 
+  
+.line {
+    background-color: #4F4F4F;
+}    
+    
+h2 {
+    color: #4F4F4F;
+}
+    
+h3 {
+    color: #4F4F4F;
+}   
+    
+h4 {
+    color: #4F4F4F;
+    font-size: 9pt;
+    letter-spacing: 5px;
+    margin-top: 50px;
+}    
+     
+footer {
+    height: 50px;
+}    
+  
+/* Project Pages */ 
+        
+}
+
+/* Desktop Styles */
+
+@media only screen and (min-width: 64em){
+ 
+main {
+    margin: 0;
+    padding: 0;
+}    
+    
+h4 {
+    font-size:10pt;
+    letter-spacing: 5px;
+}      
+    
+nav {
+    position: fixed;
+    background-color: RGBA(255,255,255,0);
+} 
+    
+nav ul {
+    right: 40px;
+}
+    
+.title {
+    width: 250px;
+    margin-top: 0;
+}    
+    
+.title-left {
+    top: -15%;
+    transform: rotate(-90deg);
+    transform-origin: left 100%;
+    padding-bottom: 10px;
+} 
+
+.title-right {
+    float: right;
+    top: -25%;
+    transform: rotate(90deg);
+    transform-origin: right 100%;
+    padding-bottom: 10px;
+}
+    
+.push {
+    margin-bottom: 150px;
+}
+  
+/* Project Pages */ 
+    
+.proj-gallery {
+    width: 28%;
+}    
+    
+.proj-title {
+    position: fixed;
+    bottom: 25%;
+    width: 100%;
+}
+   
+.clip {
+    overflow: hidden;
+    width: 50px;
+    height: 20px;
+}    
+    
+.proj-name, .proj-num {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+} 
+    
+.proj-name {
+    margin-right: 25px;
+}    
+        
+.proj-line {
+    margin-right: 45px;
+    height: 1px;
+    margin-top: 10px;
+    background-color: #4F4F4F;
+}   
+    
+}
