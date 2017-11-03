@@ -106,3 +106,20 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+
+export const query = graphql`
+  query TeaserQuery {
+    allContentfulGallery {
+      edges {
+        node {
+          id
+          title
+          galleryImages {
+            id
+          }
+        }
+      }
+    }
+  }
+`
