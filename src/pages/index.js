@@ -1,10 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <div>
     <main className="animated fadeInUp">
         <div className="row push"></div>
+
+        {data.allContentfulGallery.edges.map(({ node }) =>
+          <h1 key={node.id}>{node.title}</h1>
+        )}
+
         <div className="row">
             <div className="col-lg-offset-8 col-lg-3
                         col-md-offset-7 col-md-5">
