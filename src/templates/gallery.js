@@ -18,7 +18,7 @@ class GalleryPage extends React.Component {
       activeImage: 0
     }
 
-    this.lastScrollTop = 0;
+    this.animating = 0;
 
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -32,27 +32,30 @@ class GalleryPage extends React.Component {
   }
 
   handleScroll(event) {
-    console.log(event.deltaY);
     let delta = event.deltaY;
     let length = this.props.data.contentfulGallery.galleryImages.length;
-    let newActive = this.state.activeImage;
+    let newActive = -1;
 
+    if (delta < 0 && this.state.activeImage >= 0) {
+      newActive = this.state.activeImage - 1;
+    }
     if (delta > 0) {
       newActive = this.state.activeImage + 1;
     }
 
-    if (delta < 0) {
-      newActive = this.state.activeImage - 1;
+
+    if (newActive >= 0) {
+      if (newActive > length-1) {
+        newActive = 0;
+      }
+
+      this.setState({
+        activeImage: newActive
+      });
     }
 
-    if (newActive > length-1) {
-      newActive = 0;
-    }
 
-
-    this.setState({
-      activeImage: newActive
-    });
+    console.log(newActive)
   }
 
   render() {
@@ -63,7 +66,7 @@ class GalleryPage extends React.Component {
               key={image.id}
               active={i === this.state.activeImage}
               sizes={image.sizes}
-              offset={10}/>
+              offset={300}/>
           )}
       </Container>
     )
