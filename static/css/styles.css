@@ -46,15 +46,15 @@ nav ul li {
 nav ul li a {
     color: black;
     text-decoration: none;
-} 
-    
+}
+
 nav ul li a:hover {
     color: grey;
 }
 
 .title {
     position: absolute;
-    margin-top: -90px; 
+    margin-top: -90px;
     margin-left: 30px;
 }
 
@@ -75,7 +75,7 @@ h2 {
     letter-spacing: 5px;
     font-weight: 300;
 }
-    
+
 h3 {
     color: white;
     float: right;
@@ -83,11 +83,11 @@ h3 {
     font-size: 9pt;
     letter-spacing: 5px;
     font-weight: 300;
-} 
+}
 
 h4 {
     font-weight: 300;
-} 
+}
 
 .section {
     margin-bottom: 25px;
@@ -130,144 +130,144 @@ footer ul li:nth-child(2){
 /* Tablet Styles */
 
 @media only screen and (min-width: 40em){
-   
-    
+
+
 main {
     margin: 25px;
     padding: 0;
 }
-    
+
 main img {
     padding: 0;
     margin: 0;
 }
-    
+
 a:hover {
     transition: opacity .3s ease-in-out;
     opacity: .75;
-}    
-  
+}
+
 nav {
     position: relative;
     height: 75px;
-}    
-    
+}
+
 nav ul {
     color: #4F4F4F;
     top: 35px;
 }
-    
+
 #logo {
     position: fixed;
     z-index: 1000;
     margin: 40px 0px 0px 40px;
 }
-    
+
 .rise {
     margin-top: -200px;
 }
-    
+
 .push {
     margin-bottom: 80px;
 }
-   
+
 .title {
     position: relative;
     margin: 0;
-} 
-  
+}
+
 .line {
     background-color: #4F4F4F;
-}    
-    
+}
+
 h2 {
     color: #4F4F4F;
 }
-    
+
 h3 {
     color: #4F4F4F;
-}   
-    
+}
+
 h4 {
     color: #4F4F4F;
     font-size: 9pt;
     letter-spacing: 5px;
     margin-top: 50px;
-}    
-     
+}
+
 footer {
     height: 50px;
-}    
-  
-/* Project Pages */ 
-        
+}
+
+/* Project Pages */
+
 }
 
 /* Desktop Styles */
 
 @media only screen and (min-width: 64em){
- 
+
 main {
     margin: 0;
     padding: 0;
-}    
-    
+}
+
 h4 {
     font-size:10pt;
     letter-spacing: 5px;
-}      
-    
+}
+
 nav {
     position: fixed;
     background-color: RGBA(255,255,255,0);
-} 
-    
+}
+
 nav ul {
     right: 40px;
 }
-       
+
 .title {
     width: 100%;
-}    
+}
 
-    
+
 .push {
     margin-bottom: 150px;
 }
-  
-/* Project Pages */ 
-    
+
+/* Project Pages */
+
 .proj-gallery {
     width: 28%;
-}    
-    
+}
+
 .proj-title {
     position: fixed;
     bottom: 25%;
     width: 100%;
 }
-   
+
 .clip {
     overflow: hidden;
     width: 50px;
     height: 20px;
-}    
-    
+}
+
 .proj-name, .proj-num {
     padding: 0;
     margin: 0;
     text-align: left;
-} 
-    
+}
+
 .proj-name {
     margin-right: 25px;
-}    
-        
+}
+
 .proj-line {
     margin-right: 45px;
     height: 1px;
     margin-top: 10px;
     background-color: #4F4F4F;
-}   
-    
+}
+
 }

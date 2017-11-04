@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Nelson Huang`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,6 +10,13 @@ module.exports = {
       options: {
         spaceId: `t42pla3wg3r1`,
         accessToken: `26a70eca9888a586dbed0116f85964fdcd6afbf3ed744a0780503029b4f726bf`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
     `gatsby-plugin-netlify`
