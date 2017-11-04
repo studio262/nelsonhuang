@@ -9,7 +9,8 @@ import '../assets/css/grid.css'
 import '../assets/css/animate.css'
 import '../assets/css/styles.css'
 
-import logo from '../assets/images/logo-2.png'
+import logoPng from '../assets/images/logo-2.png'
+import logo from '../assets/images/logo.svg'
 
 const HeaderContainer = styled.nav`
   width: 100%;
@@ -43,10 +44,17 @@ const HeaderContainer = styled.nav`
   }
 `
 
+const Logo = styled.img`
+  width: 205px;
+  transform: scale(1.01);
+`
+
 const Header = () => (
   <HeaderContainer>
       <Link to="/">
-          <img id="logo" src={logo}/>
+          <Logo id="logo" src={logo}/>
+        <br/>
+          <Logo id="logo" src={logoPng}/>
       </Link>
       <ul>
           <li><Link to="/about/">ABOUT</Link></li>
@@ -70,7 +78,6 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </div>
 )
 

@@ -5,9 +5,10 @@
   "author": "Nelson Huang",
   "dependencies": {
     "gatsby": "^1.9.73",
-    "gatsby-link": "^1.6.22",
     "gatsby-image": "^1.0.16",
+    "gatsby-link": "^1.6.22",
     "gatsby-plugin-google-analytics": "^1.0.11",
+    "gatsby-plugin-google-fonts": "0.0.3",
     "gatsby-plugin-netlify": "^1.0.6",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^1.0.5",
@@ -24,7 +25,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop-hosted": "gatsby develop -H 192.168.0.23"
   },
   "devDependencies": {
     "prettier": "^1.7.4"
