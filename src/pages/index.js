@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 const gridLayout = [
+  {grid: "col-lg-offset-4 col-lg-5 col-md-offset-2 col-md-5", rise: false},
+  {grid: "col-lg-offset-3 col-lg-3 col-md-offset-2 col-md-5", rise: false},
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
@@ -12,9 +14,6 @@ const gridLayout = [
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-  {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-  {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-
 ]
 
 
@@ -39,7 +38,7 @@ const Row = (props) => (
 
 const GalleryLink = (props) => {
   return (
-    <Row className={gridLayout[props.gridLayout].rise}>
+    <Row rise={gridLayout[props.gridLayout].rise}>
       <GalleryLinkContainer className={gridLayout[props.gridLayout].grid}>
         <Link to={props.slug}>
           <Img sizes={props.thumbnailImageSizes}/>
