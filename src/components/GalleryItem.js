@@ -3,11 +3,15 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 const Container = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
 
+  opacity: ${props => props.active ? 1 : 0};
 `
 
 const GalleryItem = (props) => (
-  <Container className={props.className + " col-lg-offset-5 col-lg-4"}>
+  <Container className={props.className + " animated fadeInSlow col-lg-offset-5 col-lg-4"}>
     <Img sizes={props.sizes}/>
   </Container>
 )

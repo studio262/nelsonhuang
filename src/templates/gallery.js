@@ -5,7 +5,9 @@ import Link from "gatsby-link"
 import GalleryItem from '../components/GalleryItem'
 
 const Container = styled.div`
-
+  display: flex;
+  height: 90vh;
+  justify-content: center;
 `
 
 class GalleryPage extends React.Component {
@@ -15,6 +17,10 @@ class GalleryPage extends React.Component {
     this.state = {
       activeImage: 0
     }
+
+    this.lastScrollTop = 0;
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +29,17 @@ class GalleryPage extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    let scrollTop = event.srcElement.body.scrollTop;
+    if (scrollTop > this.lastScrollTop) {
+
+    } else if (scrollTop < this.lastScrollTop) {
+
+    }
+
+    this.lastScrollTop = scrollTop
   }
 
   render() {
