@@ -8,10 +8,16 @@ const Container = styled.div`
   width: 100%;
 
   opacity: ${props => props.active ? 1 : 0};
+  transform: ${props => props.offset};
+  transition: transform 200ms ease-out;
 `
 
 const GalleryItem = (props) => (
-  <Container className={props.className + " animated fadeInSlow col-lg-offset-5 col-lg-4"}>
+  <Container
+    active={props.active}
+    direction={props.offset}
+    className={" animated col-lg-offset-5 col-lg-4 " }>
+
     <Img sizes={props.sizes}/>
   </Container>
 )

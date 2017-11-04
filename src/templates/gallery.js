@@ -24,29 +24,46 @@ class GalleryPage extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('mousewheel', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('mousewheel', this.handleScroll);
   }
 
   handleScroll(event) {
-    let scrollTop = event.srcElement.body.scrollTop;
-    if (scrollTop > this.lastScrollTop) {
+    console.log(event.deltaY);
+    let delta = event.deltaY;
+    let length = this.props.data.contentfulGallery.galleryImages.length;
+    let newActive = this.state.activeImage;
 
-    } else if (scrollTop < this.lastScrollTop) {
-
+    if (delta > 0) {
+      newActive = this.state.activeImage + 1;
     }
 
-    this.lastScrollTop = scrollTop
+    if (delta < 0) {
+      newActive = this.state.activeImage - 1;
+    }
+
+    if (newActive > length-1) {
+      newActive = 0;
+    }
+
+
+    this.setState({
+      activeImage: newActive
+    });
   }
 
   render() {
     return (
       <Container>
-          {this.props.data.contentfulGallery.galleryImages.map((image) =>
-            <GalleryItem key={image.id} sizes={image.sizes}/>
+          {this.props.data.contentfulGallery.galleryImages.map((image, i) =>
+            <GalleryItem
+              key={image.id}
+              active={i === this.state.activeImage}
+              sizes={image.sizes}
+              offset={10}/>
           )}
       </Container>
     )
