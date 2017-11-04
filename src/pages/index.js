@@ -33,7 +33,10 @@ const gridLayout = [
 
 
 const GalleryLinkContainer = styled.div`
-
+  transition: opacity .3s ease-in-out;
+  &:hover {
+    opacity: .7;
+  }
 `
 
 const Title = styled.div`

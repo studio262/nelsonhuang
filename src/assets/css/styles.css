@@ -270,5 +270,19 @@ nav ul {
     margin-top: 10px;
     background-color: #4F4F4F;
 }
+}
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FaFaFa;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: none;
+    background: #dadada;
 }

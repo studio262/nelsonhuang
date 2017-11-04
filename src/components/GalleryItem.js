@@ -11,15 +11,20 @@ const Container = styled.div`
   transform: translateY(${props => props.offset}px);
   transition: transform 1000ms cubic-bezier(.3,.3,.3,1),
   opacity 200ms cubic-bezier(.3,.3,.3,1);
+
+  .gallery-image {
+    max-width: 620px;
+  }
 `
 
 const GalleryItem = (props) => (
   <Container
     active={props.active}
     offset={props.offset}
-    className={" animated col-lg-offset-5 col-lg-4 " }>
+    className={" animated col-lg-offset-5 col-lg-4 col-md-offset-5 col-md-6" }>
 
     <Img sizes={props.sizes}
+      className="gallery-image"
       fadeIn={true}
       backgroundColor={"#fafafa"}/>
 

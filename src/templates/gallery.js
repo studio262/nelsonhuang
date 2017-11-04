@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Link from "gatsby-link"
 
 import GalleryItem from '../components/GalleryItem'
@@ -10,13 +10,43 @@ const Container = styled.div`
   justify-content: center;
 `
 
+const numberAnimation = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(50px);
+  }
+
+  51% {
+    opacity: 0.1;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`
+
+const ProjectNum = styled.h4`
+  animation: ${props => props.animateNum ? numberAnimation + " 700ms ease-in-out 1" : "none"};
+  animation-fill-mode: forwards;
+`
+//animation: ${props => props.animateNum ? "0.5s ease-in-out 1" : "none"};
 const ProjectInfo = (props) => {
   return (
     <div className="row proj-title col-lg-offset-8">
         <h4 className="proj-name col-lg-1 col-md-2 animated fadeInUp">{props.title}</h4>
         <div className="extend proj-line"></div>
         <div className="clip">
-            <h4 className={"proj-num col-lg-1 col-md-2" + props.numberClass}>{props.activeImage}</h4>
+            <ProjectNum className={"proj-num col-lg-1 col-md-2"} animateNum={props.animateNum}>{props.activeImage}</ProjectNum>
         </div>
     </div>
   )
@@ -28,11 +58,12 @@ class GalleryPage extends React.Component {
 
     this.state = {
       activeImage: 0,
-      direction: 1
+      direction: 1,
+      animateNum: false
     }
 
     this.animating = false;
-    this.numberClass = "";
+    this.animateNum = false;
 
     this.handleScroll = this.handleScroll.bind(this);
     this.animate = this.animate.bind(this);
@@ -41,11 +72,19 @@ class GalleryPage extends React.Component {
 
   animate(delta) {
     this.animating = true;
+    this.setState({
+      animateNum: true
+    });
 
     setTimeout(function(){
       this.animating = false;
-      this.numberClass = " numberShow";
     }.bind(this), (200+(delta+20)*2));
+
+    setTimeout(function(){
+      this.setState({
+        animateNum: false
+      });
+    }.bind(this), 700);
   }
 
   handleScroll(event) {
@@ -71,12 +110,13 @@ class GalleryPage extends React.Component {
 
         this.animate(delta);
 
-        this.numberClass = " numberHide";
+        setTimeout(function(){
+          this.setState({
+            activeImage: newActive
+          });
+        }.bind(this), 100);
 
 
-        this.setState({
-          activeImage: newActive
-        });
       }
       // else {
       //   this.setState({
@@ -123,8 +163,8 @@ class GalleryPage extends React.Component {
 
           <ProjectInfo
             activeImage={this.state.activeImage+1}
-            title={this.props.data.contentfulGallery.title.toUpperCase()}
-            numberClass={this.numberClass}/>
+            animateNum={this.state.animateNum}
+            title={this.props.data.contentfulGallery.title.toUpperCase()}/>
 
       </Container>
     )
@@ -137,7 +177,7 @@ export const query = graphql`
       title
       galleryImages {
         id
-        sizes(maxWidth: 600) {
+        sizes(maxWidth: 620) {
           ...GatsbyContentfulSizes_noBase64
         }
       }
