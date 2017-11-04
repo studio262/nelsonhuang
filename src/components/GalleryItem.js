@@ -9,7 +9,8 @@ const Container = styled.div`
 
   opacity: ${props => props.active ? 1 : 0};
   transform: translateY(${props => props.offset}px);
-  transition: transform 200ms ease-out;
+  transition: transform 1000ms cubic-bezier(.3,.3,.3,1),
+  opacity 200ms cubic-bezier(.3,.3,.3,1);
 `
 
 const GalleryItem = (props) => (
@@ -18,7 +19,10 @@ const GalleryItem = (props) => (
     offset={props.offset}
     className={" animated col-lg-offset-5 col-lg-4 " }>
 
-    <Img sizes={props.sizes}/>
+    <Img sizes={props.sizes}
+      fadeIn={true}
+      backgroundColor={"#fafafa"}/>
+
   </Container>
 )
 

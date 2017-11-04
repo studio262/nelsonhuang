@@ -10,77 +10,135 @@ const Container = styled.div`
   justify-content: center;
 `
 
+const ProjectInfo = (props) => {
+  return (
+    <div className="row proj-title col-lg-offset-8">
+        <h4 className="proj-name col-lg-1 col-md-2 animated fadeInUp">{props.title}</h4>
+        <div className="extend proj-line"></div>
+        <div className="clip">
+            <h4 className={"proj-num col-lg-1 col-md-2" + props.numberClass}>{props.activeImage}</h4>
+        </div>
+    </div>
+  )
+}
+
 class GalleryPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeImage: 0
+      activeImage: 0,
+      direction: 1
     }
 
-    this.animating = 0;
+    this.animating = false;
+    this.numberClass = "";
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.animate = this.animate.bind(this);
+    this.calcOffset = this.calcOffset.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('mousewheel', this.handleScroll);
-  }
+  animate(delta) {
+    this.animating = true;
 
-  componentWillUnmount() {
-    window.removeEventListener('mousewheel', this.handleScroll);
+    setTimeout(function(){
+      this.animating = false;
+      this.numberClass = " numberShow";
+    }.bind(this), (200+(delta+20)*2));
   }
 
   handleScroll(event) {
     let delta = event.deltaY;
-    let length = this.props.data.contentfulGallery.galleryImages.length;
-    let newActive = -1;
+    console.log(delta)
 
-    if (delta < 0 && this.state.activeImage >= 0) {
-      newActive = this.state.activeImage - 1;
-    }
-    if (delta > 0) {
-      newActive = this.state.activeImage + 1;
-    }
+    if (!this.animating) {
+      let length = this.props.data.contentfulGallery.galleryImages.length;
+      let newActive = -1;
 
-
-    if (newActive >= 0) {
-      if (newActive > length-1) {
-        newActive = 0;
+      if (delta < -12 && this.state.activeImage >= 0) {
+        newActive = this.state.activeImage - 1;
+      }
+      if (delta > 12) {
+        newActive = this.state.activeImage + 1;
       }
 
-      this.setState({
-        activeImage: newActive
-      });
+
+      if (newActive >= 0) {
+        if (newActive > length-1) {
+          newActive = 0;
+        }
+
+        this.animate(delta);
+
+        this.numberClass = " numberHide";
+
+
+        this.setState({
+          activeImage: newActive
+        });
+      }
+      // else {
+      //   this.setState({
+      //     activeImage: this.props.data.contentfulGallery.galleryImages.length-1
+      //   });
+      // }
     }
 
+  }
 
-    console.log(newActive)
+  calcOffset(imageNum) {
+    let offsetBase = 100;
+
+    if (imageNum == 0 && this.state.activeImage == this.props.data.contentfulGallery.galleryImages.length-1) {
+      return offsetBase;
+    }
+
+    if (imageNum == this.props.data.contentfulGallery.galleryImages.length-1 && this.state.activeImage == 0) {
+      return -1*offsetBase;
+    }
+
+    if (imageNum == this.state.activeImage) {
+      return 0;
+    } else if (imageNum > this.state.activeImage) {
+      return offsetBase;
+    } else {
+      return -1*offsetBase;
+    }
   }
 
   render() {
     return (
-      <Container>
-          {this.props.data.contentfulGallery.galleryImages.map((image, i) =>
-            <GalleryItem
-              key={image.id}
-              active={i === this.state.activeImage}
-              sizes={image.sizes}
-              offset={300}/>
-          )}
+      <Container onWheel={this.handleScroll}>
+
+          <div className="fadeIn">
+            {this.props.data.contentfulGallery.galleryImages.map((image, i) =>
+              <GalleryItem
+                key={image.id}
+                active={i === this.state.activeImage}
+                sizes={image.sizes}
+                offset={this.calcOffset(i)}/>
+            )}
+          </div>
+
+          <ProjectInfo
+            activeImage={this.state.activeImage+1}
+            title={this.props.data.contentfulGallery.title.toUpperCase()}
+            numberClass={this.numberClass}/>
+
       </Container>
     )
   }
 }
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+  query GalleryQuery($slug: String!) {
     contentfulGallery(fields: { slug: { eq: $slug } }) {
       title
       galleryImages {
         id
         sizes(maxWidth: 600) {
-          ...GatsbyContentfulSizes
+          ...GatsbyContentfulSizes_noBase64
         }
       }
 

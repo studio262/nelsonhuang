@@ -3,6 +3,7 @@ html body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     cursor: crosshair;
+    overflow-y: scroll !important;
 }
 
 main {
