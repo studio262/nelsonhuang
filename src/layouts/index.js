@@ -9,7 +9,6 @@ import '../assets/css/grid.css'
 import '../assets/css/animate.css'
 import '../assets/css/styles.css'
 
-import logoPng from '../assets/images/logo-2.png'
 import logo from '../assets/images/logo.svg'
 
 const HeaderContainer = styled.nav`
@@ -53,8 +52,6 @@ const Header = () => (
   <HeaderContainer>
       <Link to="/">
           <Logo id="logo" src={logo}/>
-        <br/>
-          <Logo id="logo" src={logoPng}/>
       </Link>
       <ul>
           <li><Link to="/about/">ABOUT</Link></li>
