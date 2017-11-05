@@ -1,13 +1,32 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, injectGlobal } from "styled-components"
 import Link from "gatsby-link"
 
 import GalleryItem from '../components/GalleryItem'
 
 const Container = styled.div`
   display: flex;
-  height: 90vh;
   justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: ${window.innerHeight}px;
+  overflow: hidden;
+
+  @media (max-width: 800px) {
+    overflow: visible;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    margin-top: 64px;
+
+    .proj-title {
+      display: none;
+    }
+	}
+
+
 `
 
 const numberAnimation = keyframes`
@@ -39,16 +58,92 @@ const ProjectNum = styled.h4`
   animation: ${props => props.animateNum ? numberAnimation + " 700ms ease-in-out 1" : "none"};
   animation-fill-mode: forwards;
 `
-//animation: ${props => props.animateNum ? "0.5s ease-in-out 1" : "none"};
+
+const ImageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: ${window.innerHeight}px;
+  overflow: hidden;
+
+  @media (max-width: 800px) {
+    overflow: visible;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+	}
+`
+
 const ProjectInfo = (props) => {
   return (
-    <div className="row proj-title col-lg-offset-8">
-        <h4 className="proj-name col-lg-1 col-md-2 animated fadeInUp">{props.title}</h4>
+    <div className="row proj-title col-lg-offset-8 col-md-offset-8">
+        <h4 className="proj-name col-lg-1 col-md-1 animated fadeInUp">{props.title}</h4>
         <div className="extend proj-line"></div>
         <div className="clip">
             <ProjectNum className={"proj-num col-lg-1 col-md-2"} animateNum={props.animateNum}>{props.activeImage}</ProjectNum>
         </div>
     </div>
+  )
+}
+
+const GalleryNavContainer = styled.div`
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  bottom: 40px;
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  left: 40px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+	}
+`
+
+const GalleryNavLink = styled.li`
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  height: 13px;
+  width: 15px;
+
+  &:hover div {
+    height: 2px;
+  }
+
+  div {
+    width: 15px;
+    transition: background-color 300ms ease-in-out;
+    background-color: ${props => props.active ? "#4F4F4F" : "#bababa"};
+    height: ${props => props.active ? "2px" : "1px"};
+  }
+`
+
+const GalleryNav = (props) => {
+  return (
+    <GalleryNavContainer>
+     <ul>
+       {props.galleryImages.map((image, i) =>
+         <GalleryNavLink
+           key={image.id}
+           active={props.activeImage == i}
+           onClick={(idea) => props.handleNavClick(i)}>
+           <div></div>
+         </GalleryNavLink>
+       )}
+     </ul>
+  </GalleryNavContainer>
   )
 }
 
@@ -66,6 +161,7 @@ class GalleryPage extends React.Component {
     this.animateNum = false;
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleNavClick = this.handleNavClick.bind(this);
     this.animate = this.animate.bind(this);
     this.calcOffset = this.calcOffset.bind(this);
   }
@@ -85,6 +181,12 @@ class GalleryPage extends React.Component {
         animateNum: false
       });
     }.bind(this), 700);
+  }
+
+  handleNavClick(i) {
+    this.setState({
+      activeImage: i
+    })
   }
 
   handleScroll(event) {
@@ -128,7 +230,7 @@ class GalleryPage extends React.Component {
   }
 
   calcOffset(imageNum) {
-    let offsetBase = 100;
+    let offsetBase = 1000;
 
     if (imageNum == 0 && this.state.activeImage == this.props.data.contentfulGallery.galleryImages.length-1) {
       return offsetBase;
@@ -148,23 +250,30 @@ class GalleryPage extends React.Component {
   }
 
   render() {
+
     return (
       <Container onWheel={this.handleScroll}>
 
-          <div className="fadeIn">
+          <ImageContainer className="fadeIn">
             {this.props.data.contentfulGallery.galleryImages.map((image, i) =>
               <GalleryItem
                 key={image.id}
                 active={i === this.state.activeImage}
                 sizes={image.sizes}
-                offset={this.calcOffset(i)}/>
+                offset={(window.innerWidth > 800) ? this.calcOffset(i) : 0}/>
             )}
-          </div>
+          </ImageContainer>
+
 
           <ProjectInfo
             activeImage={this.state.activeImage+1}
             animateNum={this.state.animateNum}
             title={this.props.data.contentfulGallery.title.toUpperCase()}/>
+
+          <GalleryNav
+            handleNavClick={this.handleNavClick}
+            activeImage={this.state.activeImage}
+            galleryImages={this.props.data.contentfulGallery.galleryImages}/>
 
       </Container>
     )

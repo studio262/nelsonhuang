@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
+
 //import './index.css'
 import '../assets/css/grid.css'
 import '../assets/css/animate.css'
@@ -17,45 +18,41 @@ const HeaderContainer = styled.nav`
   top: 0;
   position: fixed;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
 
-  ul {
-      margin: 0;
-      padding-left: 4px;
-      right: 30px;
-      top: 15px;
-      position: fixed;
-      list-style: none;
-  }
-
-  ul li {
-      font-size: 10pt;
-      display: inline-block;
-      letter-spacing: 5px;
-  }
-
-  ul li a {
-      color: black;
-      text-decoration: none;
-  }
-
-  ul li a:hover {
-      color: grey;
+  a {
+    margin: calc(20px + 1%);
+    flex: 1;
   }
 `
 
 const Logo = styled.img`
-  width: 205px;
+  width: 200px;
+
   transform: scale(1.01);
+`
+
+const AboutLink = styled(Link)`
+  font-size: 10pt;
+  letter-spacing: 5px;
+  text-decoration: none;
+  color: black;
+  text-align: right;
+
+  &:hover {
+    color: grey;
+  }
 `
 
 const Header = () => (
   <HeaderContainer>
       <Link to="/">
-          <Logo id="logo" src={logo}/>
+          <Logo src={logo}/>
       </Link>
-      <ul>
-          <li><Link to="/about/">ABOUT</Link></li>
-      </ul>
+
+      <AboutLink to="/about/">ABOUT</AboutLink>
+
   </HeaderContainer>
 )
 
