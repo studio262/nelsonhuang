@@ -3,36 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-// const gridLayout = [
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-1 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-7 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-0 col-lg-4 col-md-offset-0 col-md-5", rise: false},
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-2 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-7 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-2 col-lg-4 col-md-offset-2 col-md-5", rise: false}, // OG Collection Ends <3
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-1 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-7 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-0 col-lg-4 col-md-offset-0 col-md-5", rise: false},
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-2 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-7 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-6 col-lg-4 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-6 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-1 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-7 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-0 col-lg-4 col-md-offset-0 col-md-5", rise: false},
-//   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-2 col-md-5", rise: true},
-//   {grid: "col-lg-offset-2 col-lg-2 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-7 col-lg-3 col-md-offset-2 col-md-5", rise: false},
-//   {grid: "col-lg-offset-6 col-lg-4 col-md-offset-2 col-md-5", rise: false},
-// ]
 
-
-// lets make the grid look good on mobile too?
 const gridLayout = [
   {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-7", rise: false}, //Beauty
   {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-6", rise: true}, // Zombie Boy
