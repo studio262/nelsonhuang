@@ -34,20 +34,34 @@ const Container = styled.div`
 	}
 `
 
-const GalleryItem = (props) => (
-  <Container
-    active={props.active}
-    offset={props.offset}
-    className={(window.innerHeight > 800) ? " animate col-lg-offset-5 col-lg-4 col-md-offset-5 col-md-8" : ""}>
+class GalleryItem extends React.Component {
+  constructor(props) {
+    super(props);
 
-    <Img sizes={props.sizes}
-      outerWrapperClassName="gallery-image-wrapper"
-      className="gallery-image"
-      fadeIn={true}
-      backgroundColor={"#f3f3f3"}/>
+    this.class = "";
+  }
 
-  </Container>
-)
+  componentDidMount() {
+    this.class = (window.innerHeight > 800) ? " animate col-lg-offset-5 col-lg-4 col-md-offset-5 col-md-8" : "";
+  }
+
+  render() {
+    return(
+      <Container
+        active={this.props.active}
+        offset={this.props.offset}
+        className={this.class}>
+
+        <Img sizes={this.props.sizes}
+          outerWrapperClassName="gallery-image-wrapper"
+          className="gallery-image"
+          fadeIn={true}
+          backgroundColor={"#f3f3f3"}/>
+
+      </Container>
+    )
+  }
+}
 
 export default GalleryItem;
 

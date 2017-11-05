@@ -11,7 +11,7 @@ const Container = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: ${window.innerHeight}px;
+  height: 100vh;
   overflow: hidden;
 
   @media (max-width: 800px) {
@@ -64,7 +64,7 @@ const ImageContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  height: ${window.innerHeight}px;
+  height: 100vh;
   overflow: hidden;
 
   @media (max-width: 800px) {
@@ -154,7 +154,8 @@ class GalleryPage extends React.Component {
     this.state = {
       activeImage: 0,
       direction: 1,
-      animateNum: false
+      animateNum: false,
+      windowWidth: 0
     }
 
     this.animating = false;
@@ -164,6 +165,12 @@ class GalleryPage extends React.Component {
     this.handleNavClick = this.handleNavClick.bind(this);
     this.animate = this.animate.bind(this);
     this.calcOffset = this.calcOffset.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      windowWidth: window.innerWidth
+    })
   }
 
   animate(delta) {
@@ -260,7 +267,7 @@ class GalleryPage extends React.Component {
                 key={image.id}
                 active={i === this.state.activeImage}
                 sizes={image.sizes}
-                offset={(window.innerWidth > 800) ? this.calcOffset(i) : 0}/>
+                offset={(this.state.windowWidth > 800) ? this.calcOffset(i) : 0}/>
             )}
           </ImageContainer>
 
