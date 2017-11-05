@@ -34,33 +34,27 @@ import Img from 'gatsby-image'
 
 // lets make the grid look good on mobile too?
 const gridLayout = [
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-6", rise: false},
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-5", rise: true},
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-5 col-xs-6", rise: false},
-  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-1 col-xs-5", rise: false},
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-xs-4", rise: true},
-  {grid: "col-lg-offset-2 col-lg-2 col-xs-offset-2 col-xs-5", rise: false},
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-xs-4", rise: false},
-  {grid: "col-lg-offset-2 col-lg-4 col-xs-offset-2 col-xs-5", rise: false}, // OG Collection Ends <3
-  //I stopped the xs grid here
-
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-md-offset-8", rise: false},
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-md-offset-1", rise: true},
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-7 col-md-offset-7", rise: false},
-  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-0 col-md-offset-0", rise: false},
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-md-offset-8", rise: true},
-  {grid: "col-lg-offset-2 col-lg-2 col-xs-offset-2 col-md-offset-2", rise: false},
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-md-offset-7", rise: false},
-  {grid: "col-lg-offset-6 col-lg-4 col-xs-offset-6 col-md-offset-6", rise: false},
-  {grid: "col-lg-offset-6 col-lg-3 col-xs-offset-6 col-md-offset-6", rise: false},
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-md-offset-8", rise: false},
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-md-offset-1", rise: true},
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-7 col-md-offset-7", rise: false},
-  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-0 col-md-offset-0", rise: false},
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-md-offset-8", rise: true},
-  {grid: "col-lg-offset-2 col-lg-2 col-xs-offset-2 col-md-offset-2", rise: false},
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-md-offset-7", rise: false},
-  {grid: "col-lg-offset-6 col-lg-4 col-xs-offset-6 col-md-offset-6", rise: false},
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-7", rise: false}, //Beauty
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-6", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
+  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-1 col-xs-5", rise: false}, // Eve (Look into overriding xs grid)
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
+  {grid: "col-lg-offset-2 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour / OG Collection Ends <3
+  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-0 col-xs-6", rise: true}, //Beauty
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-1 col-xs-5", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-3 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-1 col-xs-5", rise: false}, // Eve
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
+  {grid: "col-lg-offset-8 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
+  {grid: "col-lg-offset-2 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-6", rise: true}, //Beauty
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-5", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
+  {grid: "col-lg-offset-0 col-lg-3 col-xs-offset-1 col-xs-5", rise: false}, // Eve
+  {grid: "col-lg-offset-8 col-lg-4 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
+  {grid: "col-lg-offset-1 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour
 ]
 
 
