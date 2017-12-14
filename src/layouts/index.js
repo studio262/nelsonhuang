@@ -38,9 +38,12 @@ const Logo = styled.img`
     opacity: 0.6;
   }
 
-  &:active {
-    opacity: 1;
+  @media (hover:none), (hover:on-demand) {
+    &:hover {
+      opacity: 1;
+    }
   }
+
 
 `
 
@@ -53,13 +56,24 @@ const AboutLink = styled(Link)`
   transition: opacity 200ms ease-in-out;
   opacity: 1;
 
+  @media (hover:hover) {
+      nav a:hover{
+          background: yellow;
+      }
+  }
+
+
+
   &:hover {
     opacity: 0.5;
   }
 
-  &:active {
-    opacity: 1;
+  @media (hover:none), (hover:on-demand) {
+    &:hover {
+      opacity: 1;
+    }
   }
+
 `
 
 const Header = () => (
