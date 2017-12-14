@@ -322,7 +322,7 @@ export const query = graphql`
       galleryImages {
         id
         sizes(maxWidth: 620) {
-          ...GatsbyContentfulSizes_noBase64
+          ...GatsbyContentfulSizes
         }
       }
 
