@@ -116,13 +116,16 @@ const GalleryLink = (props) => {
 
 const IndexPage = ({ data }) => {
   let gallery = data.allContentfulGallery.edges;
+  let galleryOne = data.allContentfulGallery.edges;
+  const doubleGallery = galleryOne.concat(data.allContentfulGallery.edges);
+  const tripleGallery = doubleGallery.concat(data.allContentfulGallery.edges);
 
   return(
     <div>
       <main className="animated fadeInUp">
           <TopMargin></TopMargin>
 
-          {gallery.map(({ node }, i) =>
+          {tripleGallery.map(({ node }, i) =>
             <GalleryLink
               gridLayout={i}
               key={i}
