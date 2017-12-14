@@ -21,11 +21,17 @@ const AboutText = styled.div`
 
 const SocialLink = styled.div`
 
-  margin-top: 12px;
+  margin-top: 5px;
 
   a {
     text-decoration: none;
     color: black;
+  }
+
+  @media only screen and (min-width: 800px) {
+    left: 40px;
+    bottom: 40px;
+    margin-top: 12px;
   }
 `
 

@@ -5,27 +5,27 @@ import Img from 'gatsby-image'
 
 
 const gridLayout = [
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-7", rise: false}, //Beauty
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-6", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
-  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-1 col-xs-5", rise: false}, // Eve (Look into overriding xs grid)
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
-  {grid: "col-lg-offset-2 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour / OG Collection Ends <3
-  {grid: "col-lg-offset-0 col-lg-4 col-xs-offset-0 col-xs-6", rise: true}, //Beauty
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-1 col-xs-5", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-3 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-1 col-xs-5", rise: false}, // Eve
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
-  {grid: "col-lg-offset-8 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
-  {grid: "col-lg-offset-2 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-5 col-xs-6", rise: true}, //Beauty
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-offset-1 col-xs-5", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-5 col-xs-6", rise: false}, // Lucrece
-  {grid: "col-lg-offset-0 col-lg-3 col-xs-offset-1 col-xs-5", rise: false}, // Eve
-  {grid: "col-lg-offset-8 col-lg-4 col-xs-offset-8 col-xs-4", rise: true}, //Dissembled
-  {grid: "col-lg-offset-1 col-lg-2 col-xs-offset-2 col-xs-5", rise: false}, // Crystal
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-7 col-xs-4", rise: false}, // Colour
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-2 col-xs-10", rise: false}, //Beauty
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-8", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-3 col-xs-9", rise: false}, // Lucrece
+  {grid: "col-lg-offset-0 col-lg-4 col-xs-8", rise: false}, // Eve
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-3 col-xs-9", rise: true}, //Dissembled
+  {grid: "col-lg-offset-2 col-lg-2 col-xs-8", rise: false}, // Crystal
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-2 col-xs-10", rise: false}, // Colour / OG Collection Ends <3
+  {grid: "col-lg-offset-1 col-lg-4 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-9", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-3 col-lg-2 col-xs-offset-4 col-xs-8", rise: false}, // Lucrece
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-2 col-xs-10", rise: false}, // Eve
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-8", rise: true}, //Dissembled
+  {grid: "col-lg-offset-8 col-lg-2 col-xs-offset-3 col-xs-9", rise: false}, // Crystal
+  {grid: "col-lg-offset-2 col-lg-3 col-xs-10", rise: false}, // Colour
+  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
+  {grid: "col-lg-offset-1 col-lg-3 col-xs-10", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-7 col-lg-2 col-xs-8", rise: false}, // Lucrece
+  {grid: "col-lg-offset-2 col-lg-3 col-xs-offset-3 col-xs-9", rise: false}, // Eve
+  {grid: "col-lg-offset-8 col-lg-4 col-xs-offset-4 col-xs-8", rise: true}, //Dissembled
+  {grid: "col-lg-offset-1 col-lg-2 col-xs-10", rise: false}, // Crystal
+  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-3 col-xs-9", rise: false}, // Colour
 ]
 
 
@@ -71,6 +71,10 @@ const Line = styled.div`
   flex: 1;
 `
 
+const TopMargin = styled.div`
+  margin-bottom: 150px;
+`;
+
 
 const Row = (props) => (
   <div className={props.rise ? 'row rise' : 'row' }>
@@ -114,7 +118,7 @@ const IndexPage = ({ data }) => {
   return(
     <div>
       <main className="animated fadeInUp">
-          <div className="row push"></div>
+          <TopMargin></TopMargin>
 
           {tripleGallery.map(({ node }, i) =>
             <GalleryLink

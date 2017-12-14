@@ -27,7 +27,7 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop-hosted": "gatsby develop -H 192.168.0.11"
+    "develop-hosted": "gatsby develop -H 192.168.0.21"
   },
   "devDependencies": {
     "prettier": "^1.7.4"
