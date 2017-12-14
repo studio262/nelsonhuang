@@ -26,6 +26,11 @@ const SocialLink = styled.div`
   a {
     text-decoration: none;
     color: black;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  a:hover {
+      opacity: 0.6;
   }
 
   @media only screen and (min-width: 800px) {

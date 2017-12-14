@@ -73,6 +73,10 @@ const Line = styled.div`
 
 const TopMargin = styled.div`
   margin-bottom: 150px;
+
+  @media only screen and (max-width: 800px) {
+    margin: 40px;
+  }
 `;
 
 

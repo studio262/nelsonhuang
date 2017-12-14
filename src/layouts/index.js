@@ -25,12 +25,18 @@ const HeaderContainer = styled.nav`
     margin: calc(20px + 1%);
     flex: 1;
   }
+
 `
 
 const Logo = styled.img`
   width: 200px;
-
   transform: scale(1.01);
+  transition: opacity 200ms ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
 `
 
 const AboutLink = styled(Link)`
@@ -39,9 +45,10 @@ const AboutLink = styled(Link)`
   text-decoration: none;
   color: black;
   text-align: right;
+  transition: opacity 200ms ease-in-out;
 
   &:hover {
-    color: grey;
+    opacity: 0.5;
   }
 `
 
