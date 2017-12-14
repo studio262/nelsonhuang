@@ -5,27 +5,27 @@ import Img from 'gatsby-image'
 
 
 const gridLayout = [
-  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-2 col-xs-10", rise: false}, //Beauty
+  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-6 col-md-6 col-xs-offset-2 col-xs-10", rise: false}, //Beauty
   {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-4 col-xs-8", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-7 col-lg-2 col-md-offset-6 col-md-4 col-xs-offset-3 col-xs-9", rise: false}, // Lucrece
-  {grid: "col-lg-offset-0 col-lg-4 col-md-offset-0 col-md-5 col-xs-8", rise: false}, // Eve
-  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-3 col-xs-9", rise: true}, //Dissembled
+  {grid: "col-lg-offset-7 col-lg-2 col-md-offset-6 col-md-5 col-xs-offset-3 col-xs-9", rise: false}, // Lucrece
+  {grid: "col-lg-offset-0 col-lg-4 col-md-offset-1 col-md-4 col-xs-8", rise: false}, // Eve
+  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-6 col-md-6 col-xs-offset-3 col-xs-9", rise: true}, //Dissembled
   {grid: "col-lg-offset-2 col-lg-2 col-md-offset-1 col-md-4 col-xs-8", rise: false}, // Crystal
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-2 col-xs-10", rise: false}, // Colour / OG Collection Ends <3
-  {grid: "col-lg-offset-1 col-lg-4 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-9", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-3 col-lg-2 col-xs-offset-4 col-xs-8", rise: false}, // Lucrece
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-2 col-xs-10", rise: false}, // Eve
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-8", rise: true}, //Dissembled
-  {grid: "col-lg-offset-8 col-lg-2 col-xs-offset-3 col-xs-9", rise: false}, // Crystal
-  {grid: "col-lg-offset-2 col-lg-3 col-xs-10", rise: false}, // Colour
-  {grid: "col-lg-offset-8 col-lg-3 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
-  {grid: "col-lg-offset-1 col-lg-3 col-xs-10", rise: true}, // Zombie Boy
-  {grid: "col-lg-offset-7 col-lg-2 col-xs-8", rise: false}, // Lucrece
-  {grid: "col-lg-offset-2 col-lg-3 col-xs-offset-3 col-xs-9", rise: false}, // Eve
-  {grid: "col-lg-offset-8 col-lg-4 col-xs-offset-4 col-xs-8", rise: true}, //Dissembled
-  {grid: "col-lg-offset-1 col-lg-2 col-xs-10", rise: false}, // Crystal
-  {grid: "col-lg-offset-7 col-lg-3 col-xs-offset-3 col-xs-9", rise: false}, // Colour
+  {grid: "col-lg-offset-7 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-2 col-xs-10", rise: false}, // Colour / OG Collection Ends <3
+  {grid: "col-lg-offset-1 col-lg-4 col-md-offset-2 col-md-4 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
+  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-8 col-md-4 col-xs-9", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-3 col-lg-2 col-md-offset-1 col-md-5 col-xs-offset-4 col-xs-8", rise: false}, // Lucrece
+  {grid: "col-lg-offset-7 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-2 col-xs-10", rise: false}, // Eve
+  {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-6 col-xs-8", rise: true}, //Dissembled
+  {grid: "col-lg-offset-8 col-lg-2 col-md-offset-7 col-md-5 col-xs-offset-3 col-xs-9", rise: false}, // Crystal
+  {grid: "col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-10", rise: false}, // Colour
+  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
+  {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-4 col-xs-10", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-7 col-lg-2 col-md-offset-6 col-md-4 col-xs-8", rise: false}, // Lucrece
+  {grid: "col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-6 col-xs-offset-3 col-xs-9", rise: false}, // Eve
+  {grid: "col-lg-offset-8 col-lg-4 col-md-offset-8 col-md-4 col-xs-offset-4 col-xs-8", rise: true}, //Dissembled
+  {grid: "col-lg-offset-1 col-lg-2 col-md-offset-0 col-md-5 col-xs-10", rise: false}, // Crystal
+  {grid: "col-lg-offset-7 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-3 col-xs-9", rise: false}, // Colour
 ]
 
 
