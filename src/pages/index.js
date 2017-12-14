@@ -36,20 +36,41 @@ const GalleryLinkContainer = styled.div`
   }
 `
 
-const Title = styled.div`
+const TitleBox = styled.div`
   position: relative;
   margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+`
+
+const Title = styled.h2`
+
+`
+
+const LineBox = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 `
 
 const Line = styled.div`
   background-color: #4F4F4F;
-  margin-left: 25px;
-  margin-bottom: 4px;
+  margin-left: 10px;
   margin-right: 10px;
-  width: 25px;
   height: 1px;
-  display: inline-block;
+  width: 100%;
+  max-width: 25px;
+  flex: 1;
 `
+
 
 const Row = (props) => (
   <div className={props.rise ? 'row rise' : 'row' }>
@@ -68,10 +89,15 @@ const GalleryLink = (props) => {
               fadeIn={true}/>
         </Link>
 
-        <Title>
+        <TitleBox>
+
             <h2>{props.title}</h2>
-            <h3><Line/>{props.number}</h3>
-        </Title>
+            <LineBox>
+              <Line/>
+            </LineBox>
+            <h3>{props.number}</h3>
+
+        </TitleBox>
       </GalleryLinkContainer>
     </Row>
   )
