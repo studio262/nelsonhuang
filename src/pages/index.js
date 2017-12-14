@@ -75,7 +75,11 @@ const TopMargin = styled.div`
   margin-bottom: 150px;
 
   @media only screen and (max-width: 800px) {
+<<<<<<< HEAD
     mar0px;
+=======
+    margin-bottom: 90px;
+>>>>>>> 5b7c05ecfda474fce6415e8dfacac04c1426d83f
   }
 `;
 
