@@ -191,25 +191,20 @@ class GalleryPage extends React.Component {
 
   animate(delta) {
     this.animating = true;
+
     this.setState({
       animateNum: true
     });
 
-    // if (delta <= 30) {
-    //   this.animating = false;
-    // }
-
     setTimeout(function(){
-      if (Math.abs(delta) < 10)
+      if (Math.abs(delta) < 10) {
         this.animating = false;
-      else {
+      } else {
         setTimeout(function(){
           this.animating = false;
         }.bind(this), 500);
       }
     }.bind(this), (700));
-    //}.bind(this), (200+(delta+20)*2));
-
 
     setTimeout(function(){
       this.setState({
@@ -255,11 +250,6 @@ class GalleryPage extends React.Component {
 
 
       }
-      // else {
-      //   this.setState({
-      //     activeImage: this.props.data.contentfulGallery.galleryImages.length-1
-      //   });
-      // }
     }
 
   }

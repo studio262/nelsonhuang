@@ -343,7 +343,7 @@ html.fp-enabled, .fp-enabled body {
   order: 1;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
   #superContainer {
     height: 100%;
     position: relative;
