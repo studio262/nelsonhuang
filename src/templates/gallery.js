@@ -165,6 +165,7 @@ class GalleryPage extends React.Component {
     this.handleNavClick = this.handleNavClick.bind(this);
     this.animate = this.animate.bind(this);
     this.calcOffset = this.calcOffset.bind(this);
+    this.debounce = this.debounce.bind(this);
   }
 
   componentDidMount() {
@@ -173,15 +174,42 @@ class GalleryPage extends React.Component {
     })
   }
 
+  debounce(func, wait, immediate) {
+  	var timeout;
+  	return function() {
+  		var context = this, args = arguments;
+  		var later = function() {
+  			timeout = null;
+  			if (!immediate) func.apply(context, args);
+  		};
+  		var callNow = immediate && !timeout;
+  		clearTimeout(timeout);
+  		timeout = setTimeout(later, wait);
+  		if (callNow) func.apply(context, args);
+  	};
+  };
+
   animate(delta) {
     this.animating = true;
     this.setState({
       animateNum: true
     });
 
+    // if (delta <= 30) {
+    //   this.animating = false;
+    // }
+
     setTimeout(function(){
-      this.animating = false;
-    }.bind(this), (200+(delta+20)*2));
+      if (Math.abs(delta) < 10)
+        this.animating = false;
+      else {
+        setTimeout(function(){
+          this.animating = false;
+        }.bind(this), 500);
+      }
+    }.bind(this), (700));
+    //}.bind(this), (200+(delta+20)*2));
+
 
     setTimeout(function(){
       this.setState({
