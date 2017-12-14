@@ -10,7 +10,7 @@ const AboutText = styled.div`
     margin: 0px 25px;
     text-transform: uppercase;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
     @media only screen and (min-width: 800px) {
       padding-top: 100px;
@@ -45,7 +45,7 @@ const LinkContainer = styled.div`
     position: fixed;
     text-transform: uppercase;
     font-size: 13px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     bottom: 25px;
     left: 25px;
 
