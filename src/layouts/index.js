@@ -32,6 +32,7 @@ const Logo = styled.img`
   width: 200px;
   transform: scale(1.01);
   transition: opacity 200ms ease-in-out;
+  opacity: 1;
 
   &:hover {
     opacity: 0.6;
@@ -50,6 +51,7 @@ const AboutLink = styled(Link)`
   color: black;
   text-align: right;
   transition: opacity 200ms ease-in-out;
+  opacity: 1;
 
   &:hover {
     opacity: 0.5;
