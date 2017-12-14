@@ -56,7 +56,7 @@ class GalleryItem extends React.Component {
           outerWrapperClassName="gallery-image-wrapper"
           className="gallery-image"
           fadeIn={true}
-          backgroundColor={"#f3f3f3"}/>
+          backgroundColor={"#F8F8F8"}/>
 
       </Container>
     )

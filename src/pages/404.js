@@ -1,10 +1,23 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const ErrorText = styled.div `
+
+  text-transform: uppercase;
+  margin: 100px 0px 0px 25px;
+
+  @media only screen and (min-width: 800px) {
+    margin: 150px 0px 150px 40px;
+  }
+
+
+`
 
 const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
+
+  <ErrorText>
+    <p>404 — Page Not Found</p>
+  </ErrorText>
 )
 
 export default NotFoundPage

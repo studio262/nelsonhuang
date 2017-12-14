@@ -7,32 +7,68 @@ const Container = styled.div`
 
 const AboutText = styled.div`
 
+    margin: 0px 25px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
 
-  p {
-    line-height: 1.6;
+    @media only screen and (min-width: 800px) {
+      padding-top: 100px;
+      margin: 0px 40px;
+    }
+
+`
+
+const SocialLink = styled.div`
+
+  margin-top: 12px;
+
+  a {
+    text-decoration: none;
+    color: black;
   }
 `
 
-const PhoneNum = styled.p`
+const LinkContainer = styled.div`
 
-`
+    position: fixed;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    bottom: 25px;
+    left: 25px;
 
-const Email = styled.p`
+    @media only screen and (min-width: 800px) {
+      left: 40px;
+      bottom: 40px;
+    }
+
 
 `
 
 const AboutPage = ({data}) => (
   <Container>
 
-    <AboutText dangerouslySetInnerHTML={{__html: data.contentfulAbout.aboutParagraph.aboutParagraph.replace(/(?:\r\n|\r|\n)/g, '<br />')}} />
+    <AboutText className="col-lg-4" dangerouslySetInnerHTML={{__html: data.contentfulAbout.aboutParagraph.aboutParagraph.replace(/(?:\r\n|\r|\n)/g, '<br />')}} />
 
-    <PhoneNum>
-      {data.contentfulAbout.phone}
-    </PhoneNum>
+    <LinkContainer>
+      <SocialLink className="col-lg-">
+        {data.contentfulAbout.phone}
+      </SocialLink>
 
-    <Email>
-      {data.contentfulAbout.email}
-    </Email>
+      <SocialLink>
+        <a target="_none" href={`mailto:${data.contentfulAbout.email}/`}>
+          {data.contentfulAbout.email}
+        </a>
+
+      </SocialLink>
+
+      <SocialLink>
+        <a target="_none" href={`https://www.instagram.com/${data.contentfulAbout.instagram}/`}>
+          @{data.contentfulAbout.instagram}
+        </a>
+      </SocialLink>
+    </LinkContainer>
 
   </Container>
 )
@@ -44,6 +80,7 @@ export const query = graphql`
     contentfulAbout(title: { eq: "About"} ) {
       phone
       email
+      instagram
 
       aboutParagraph {
         aboutParagraph
