@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 
 const gridLayout = [
-  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-6 col-md-6 col-xs-offset-2 col-xs-10", rise: false}, //Beauty
+  {grid: "col-lg-offset-8 col-lg-3 col-md-offset-6 col-md-3 col-xs-offset-2 col-xs-10", rise: false}, //Beauty
   {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-5 col-xs-8", rise: true}, // Zombie Boy
   {grid: "col-lg-offset-7 col-lg-2 col-xs-offset-3 col-xs-9", rise: false}, // Lucrece
   {grid: "col-lg-offset-0 col-lg-4 col-xs-8", rise: false}, // Eve
@@ -75,11 +75,7 @@ const TopMargin = styled.div`
   margin-bottom: 150px;
 
   @media only screen and (max-width: 800px) {
-<<<<<<< HEAD
     mar0px;
-=======
-    margin-bottom: 90px;
->>>>>>> 5b7c05ecfda474fce6415e8dfacac04c1426d83f
   }
 `;
 
