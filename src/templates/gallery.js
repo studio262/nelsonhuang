@@ -226,7 +226,7 @@ class GalleryPage extends React.Component {
 
   handleScroll(event) {
     let delta = event.deltaY;
-    console.log(delta)
+    //console.log(delta)
 
     if (!this.animating) {
       let length = this.props.data.contentfulGallery.galleryImages.length;
