@@ -37,6 +37,10 @@ const Logo = styled.img`
     opacity: 0.6;
   }
 
+  &:active {
+    opacity: 1;
+  }
+
 `
 
 const AboutLink = styled(Link)`
@@ -49,6 +53,10 @@ const AboutLink = styled(Link)`
 
   &:hover {
     opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 1;
   }
 `
 
