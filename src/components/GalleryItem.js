@@ -42,7 +42,7 @@ class GalleryItem extends React.Component {
   }
 
   componentDidMount() {
-    this.class = (window.innerHeight > 800) ? " animate col-lg-offset-5 col-lg-4 col-md-offset-5 col-md-8" : "";
+    this.class = (window.innerWidth > 800) ? " animate col-lg-offset-5 col-lg-4 col-md-offset-5 col-md-8" : "";
   }
 
   render() {
