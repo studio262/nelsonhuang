@@ -1496,6 +1496,7 @@
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+  animation-duration: 600ms;
 }
 
 @-webkit-keyframes fadeInUpBig {
@@ -3376,9 +3377,9 @@
     0% {
         width: 0;
     }
-    
+
     100% {
-        width: 60px;   
+        width: 60px;
     }
 }
 
@@ -3386,9 +3387,9 @@
     0% {
         width: 0;
     }
-    
+
     100% {
-        width: 60px;   
+        width: 60px;
     }
 }
 
@@ -3396,13 +3397,13 @@
     0% {
         width: 0;
     }
-    
+
     100% {
-        width:60px;   
+        width:60px;
     }
 }
 
-.extend {    
+.extend {
     -webkit-animation: line 600ms 1 forwards;
     -moz-animation: line 600ms 1 forwards;
     -o-animation: line 600ms 1 forwards;
@@ -3416,9 +3417,9 @@
     0% {
         margin-top: 0;
     }
-    
+
     100% {
-        margin-top: 50px;  
+        margin-top: 50px;
     }
 }
 
@@ -3426,9 +3427,9 @@
     0% {
         margin-top: 0;
     }
-    
+
     100% {
-        margin-top: 50px;   
+        margin-top: 50px;
     }
 }
 
@@ -3436,13 +3437,13 @@
     0% {
         margin-top: 0;
     }
-    
+
     100% {
-        margin-top: 50px;  
+        margin-top: 50px;
     }
 }
 
-.numberHide {    
+.numberHide {
     -webkit-animation: numberHide 1s;
     -moz-animation: numberHide 1s;
     -o-animation: numberHide 1s;
@@ -3454,9 +3455,9 @@
     0% {
         margin-top: 50px;
     }
-    
+
     100% {
-        margin-top: 0;  
+        margin-top: 0;
     }
 }
 
@@ -3464,9 +3465,9 @@
     0% {
         margin-top: 50px;
     }
-    
+
     100% {
-        margin-top: 0;   
+        margin-top: 0;
     }
 }
 
@@ -3474,13 +3475,13 @@
     0% {
         margin-top: 50px;
     }
-    
+
     100% {
-        margin-top: 0;  
+        margin-top: 0;
     }
 }
 
-.numberShow {    
+.numberShow {
     -webkit-animation: numberShow .2s;
     -moz-animation: numberShow .2s;
     -o-animation: numberShow .2s;

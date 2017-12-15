@@ -20,7 +20,7 @@ const gridLayout = [
   {grid: "col-lg-offset-8 col-lg-2 col-md-offset-7 col-md-5 col-xs-offset-3 col-xs-9", rise: false}, // Crystal
   {grid: "col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-10", rise: false}, // Colour
   {grid: "col-lg-offset-8 col-lg-3 col-md-offset-7 col-md-5 col-xs-offset-4 col-xs-8", rise: true}, //Beauty
-  {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-4 col-xs-10", rise: true}, // Zombie Boy
+  {grid: "col-lg-offset-1 col-lg-3 col-md-offset-0 col-md-4 col-xs-10", rise: false}, // Zombie Boy
   {grid: "col-lg-offset-7 col-lg-2 col-md-offset-6 col-md-4 col-xs-8", rise: false}, // Lucrece
   {grid: "col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-6 col-xs-offset-3 col-xs-9", rise: false}, // Eve
   {grid: "col-lg-offset-8 col-lg-4 col-md-offset-8 col-md-4 col-xs-offset-4 col-xs-8", rise: true}, //Dissembled
@@ -116,9 +116,7 @@ const GalleryLink = (props) => {
 
 const IndexPage = ({ data }) => {
   let gallery = data.allContentfulGallery.edges;
-  let galleryOne = data.allContentfulGallery.edges;
-  const doubleGallery = galleryOne.concat(data.allContentfulGallery.edges);
-  const tripleGallery = doubleGallery.concat(data.allContentfulGallery.edges);
+  
 
   return(
     <div>
