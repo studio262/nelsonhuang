@@ -5,7 +5,9 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === "ContentfulGallery") {
-    let slug = node.title.replace(/\s+/g, '-').toLowerCase();
+    let slug = node.title.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9 -]/g, '');
+
+    console.log(slug)
 
     createNodeField({
       node,

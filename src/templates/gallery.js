@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { keyframes, injectGlobal } from "styled-components"
 import Link from "gatsby-link"
+import normalizeWheel from 'normalize-wheel'
 
 import GalleryItem from '../components/GalleryItem'
 
@@ -221,6 +222,7 @@ class GalleryPage extends React.Component {
 
   handleScroll(event) {
     let delta = event.deltaY;
+
     //console.log(delta)
 
     if (!this.animating) {
